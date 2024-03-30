@@ -49,11 +49,18 @@ public class RemoveDuplicates2 {
 
     public static int removeDuplicates(int[] nums)
     {
+        //We want to return early if the array is empty or if it only contains one element.
         if(nums.length<2)
             return nums.length;
 
+//        This k variable is what does the trick. This k variable will only be incremented if in the traversal of the array,
+//        we encounter a number that's the same and the lessThanTwo variable is true. However, if we encounter a value
+//        the same as the value being pointed to by index k, and the lessThanTwo is false meaning there's already 2 of those
+//        values in our result array (the array containing elements from the 0-th element to the k-th element), we continue traversing
+//        and we don't increment k. The only time we will increment k again is if we encounter a value that's different
+//        from the value being pointed by k currently. And when we do, this means we are encountering this value for the first
+//        time so we set the lessthanTwo value to true.
         int k = 0;
-        //int atMostTwo = 0;
         boolean lessThanTwo = true;
         for(int counter = 0; counter<nums.length; counter++)
         {
