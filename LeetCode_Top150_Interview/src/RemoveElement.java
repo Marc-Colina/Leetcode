@@ -49,21 +49,18 @@ public class RemoveElement {
         }
     }
 
+    //We have two index pointers : k and counter. The index pointer k is what does the trick here. As we traverse the array
+    //through the counter pointer, everytime we encounter a value that's not equal to val, we put it in nums[k] and we
+    //only increment k once this happens. Meaning, everytime we encounter a value that's equal to val, we just continue traversing
+    //through the whole array. This makes sure that from the 0-th element of the array to the k-th element, all these do not
+    //contain a value equal to val.
     public static int removeElement(int[] nums, int val) {
         int k = 0;
         for(int counter = 0; counter < nums.length; counter++)
         {
-            if(counter == 0 && nums[counter] != val) {
-                k++;
-                continue;
-            }
-
             if(nums[counter] != val)
             {
-                if(k != counter) {
-                    nums[k] = nums[counter];
-                    nums[counter] = val;
-                }
+                nums[k] = nums[counter];
                 k++;
             }
         }
