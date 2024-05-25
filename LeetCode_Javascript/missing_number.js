@@ -1,6 +1,7 @@
 //This is assuming that the numbers are sorted
 //Solution 1 (LESS difficult but LESS efficient - O(n))
 function missingNumberEasy(arrayOfNumbers) {
+  222;
   let counter = 1;
   for (let index = 0; index < arrayOfNumbers.length; index++) {
     if (arrayOfNumbers[index] != counter) {
@@ -58,7 +59,7 @@ arrayOfNumbers = [
   99,
 ];
 
-arrayOfNumbers2 = [1, 10, 9, 4, 5, 3, 2, 6, 7];
+arrayOfNumbers2 = [3, 0, 1];
 
 console.log(missingNumberEasy(arrayOfNumbers));
 console.log(missingNumber(arrayOfNumbers));
