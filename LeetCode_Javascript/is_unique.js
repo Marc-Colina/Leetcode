@@ -10,4 +10,18 @@ function is_unique(arrayOfNumbers) {
   return true;
 }
 
+function is_unique_set(nums) {
+  let set = new Set();
+
+  for (let num of nums) {
+    if (set.has(num)) {
+      return false;
+    } else {
+      set.add(num);
+    }
+  }
+  return true;
+}
+
 console.log(is_unique([4, 1, 2, 3, 4, 5, 6]));
+console.log(is_unique_set([10, 1, 2, 3, 4, 5, 6]));
